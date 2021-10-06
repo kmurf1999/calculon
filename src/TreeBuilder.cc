@@ -1,4 +1,4 @@
-#include "TreeBuilder.h"
+#include "../include/supremus/TreeBuilder.h"
 
 void TreeBuilder::build_tree(Node *root, BetSizing *bet_sizes,
                              bool limit_to_street) {

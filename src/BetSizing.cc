@@ -1,4 +1,4 @@
-#include "BetSizing.h"
+#include "../include/supremus/BetSizing.h"
 
 BetSizing::BetSizing(vector<vector<double>> pot_fractions) {
   // assert(pot_fractions.size() >= 1);

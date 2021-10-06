@@ -31,7 +31,7 @@ struct Node {
   // depth shouldnt take more than 8bits
   uint32_t depth;
   // current number of bets, resets every round
-  uint8_t num_bets;
+  uint32_t num_bets;
   // is this a terminal node
   bool terminal;
   // bets
@@ -41,12 +41,6 @@ struct Node {
 
   Node();
   ~Node();
-  // are all bets equal?
-  // bool bets_settled();
-  // // copy this node
-  // Node *clone();
-  // // return the value of the maximum bet
-  // uint32_t max_bet();
 };
 
 void print_node(Node*, int);

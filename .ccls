@@ -1,3 +1,7 @@
--std=c++17
+-std=c++11
 -I
-./lib/googletest/googletest/include
+./include
+-I
+./libs/googletest/googletest/include
+-I
+./libs/ompeval/include
