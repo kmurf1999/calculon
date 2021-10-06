@@ -1,4 +1,4 @@
-#include "../include/supremus/Node.h"
+#include "../include/calculon/Node.h"
 #include <iostream>
 
 using namespace std;

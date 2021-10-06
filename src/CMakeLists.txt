@@ -1,5 +1,3 @@
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.cc)
-
-add_library(supremus STATIC ${SOURCES})
-
-target_link_libraries(supremus ompeval)
+add_library(${CALCULON_LIB} STATIC ${SOURCES})
+target_link_libraries(${CALCULON_LIB} ompeval)

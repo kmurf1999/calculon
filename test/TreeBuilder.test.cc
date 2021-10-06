@@ -1,4 +1,4 @@
-#include <supremus/TreeBuilder.h>
+#include <calculon/TreeBuilder.h>
 #include <gtest/gtest.h>
 
 TEST(TreeBuilder, build_game_tree_river) {

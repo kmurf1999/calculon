@@ -1,2 +1,2 @@
 #include <gtest/gtest.h>
-#include <supremus/Node.h>
+#include <calculon/Node.h>

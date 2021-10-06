@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include <supremus/Evaluator.h>
-#include <supremus/Utils.h>
+#include <calculon/Evaluator.h>
+#include <calculon/Utils.h>
 
 #include <iostream>
 

@@ -1,4 +1,4 @@
-#include <supremus/BetSizing.h>
+#include <calculon/BetSizing.h>
 #include <gtest/gtest.h>
 #include <iostream>
 

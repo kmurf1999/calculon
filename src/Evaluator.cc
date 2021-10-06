@@ -1,4 +1,4 @@
-#include "../include/supremus/Evaluator.h"
+#include "../include/calculon/Evaluator.h"
 
 uint16_t* batch_eval(uint64_t board_mask) {
   assert(__builtin_popcountl(board_mask) == 5);
