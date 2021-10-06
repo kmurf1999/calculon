@@ -35,7 +35,7 @@ size_t get_hole_index(int c1, int c2) {
 }
 
 vector<uint64_t> get_next_boards(uint64_t board) {
-  int bit_count = __builtin_popcount(board);
+  int bit_count = __builtin_popcountl(board);
 
   assert(bit_count == 0 || bit_count == 3 || bit_count == 4);
 

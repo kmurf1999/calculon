@@ -18,7 +18,13 @@ TEST(Utils, get_next_boards) {
 }
 
 TEST(Utils, get_hole_index) {
-  int index = utils::get_hole_index(0, 1);
-  cout << index << endl;
-  EXPECT_EQ(index, 0);
+  int count[1326] = { 0 };
+  for (int c1=0; c1 < 52; ++c1) {
+    for (int c2=c1+1; c2 < 52; ++c2) {
+      int index = utils::get_hole_index(c1, c2);
+      count[index] += 1;
+    }
+  }
+  for (int i=0; i < 1326; ++i)
+    EXPECT_EQ(count[i], 1);
 }
