@@ -5,3 +5,5 @@
 ./libs/googletest/googletest/include
 -I
 ./libs/ompeval/include
+-I
+/usr/local/cuda/include
