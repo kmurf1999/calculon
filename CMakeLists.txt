@@ -18,21 +18,3 @@ target_compile_features(calculon PRIVATE cxx_auto_type)
 
 enable_testing()
 add_subdirectory(test)
-
-# target_link_libraries()
-
-# enable_testing()
-# 
-# set(CALCULON_LIB calculon)
-# set(CALCULON_TEST calculon_test)
-# 
-# add_subdirectory(libs/ompeval)
-# include_directories(libs/ompeval/include)
-# 
-# add_subdirectory(libs/googletest)
-# include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-# 
-# add_subdirectory(src)
-# include_directories(include)
-# 
-# add_subdirectory(test)
