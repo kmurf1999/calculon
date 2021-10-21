@@ -55,6 +55,6 @@ TEST(TreeBuilder, build_game_tree_preflop) {
   builder->build_tree(root, bet_sizes, true);
 
   // print_node(root, 0);
-
+  
   EXPECT_EQ(root->depth, 7);
 }

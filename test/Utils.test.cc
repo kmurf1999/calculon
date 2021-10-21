@@ -1,6 +1,5 @@
 #include <calculon/Utils.h>
 #include <gtest/gtest.h>
-
 #include <iostream>
 
 using namespace std;

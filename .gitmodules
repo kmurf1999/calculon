@@ -1,0 +1,13 @@
+[submodule "libs/googletest"]
+	path = libs/googletest
+	url = https://github.com/google/googletest
+	branch = release-1.8.0
+[submodule "googletest"]
+	path = googletest
+	url = https://github.com/google/googletest
+[submodule "extern/--force"]
+	path = extern/--force
+	url = https://github.com/google/googletest
+[submodule "extern/googletest"]
+	path = extern/googletest
+	url = https://github.com/google/googletest

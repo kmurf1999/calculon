@@ -4,16 +4,17 @@
 #include <algorithm>
 #include <assert.h>
 #include <cstdint>
-#include <omp/HandEvaluator.h>
 #include <cstring>
 #include <iostream>
 
 #include "Constants.h"
 #include "Utils.h"
 
-static const omp::HandEvaluator EVAL;
+// The handranks lookup table- loaded from HANDRANKS.DAT.
+extern int HR[];
+void init_hand_ranks (void) __attribute__((constructor));
 
 // evaluate all hands on board and move output to out
-uint16_t* batch_eval(uint64_t board_mask);
+int* batch_eval(uint8_t board[5]);
 
 #endif // __EVALUATE_H__

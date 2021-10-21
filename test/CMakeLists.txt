@@ -1,15 +1,12 @@
-include(FetchContent)
-include(GoogleTest)
-FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG        release-1.10.0
-)
-FetchContent_MakeAvailable(googletest)
+add_subdirectory("${CMAKE_SOURCE_DIR}/extern/googletest" "extern/googletest")
 
-file(GLOB_RECURSE SRCS LIST_DIRECTORIES true *.cc)
-add_executable(calculon_test ${SRCS})
+add_executable(calculon_test
+  BetSizing.test.cc
+  Evaluator.test.cc
+  Utils.test.cc
+  TreeBuilder.test.cc
+)
 target_compile_features(calculon_test PRIVATE cxx_auto_type)
-target_link_libraries(calculon_test gtest_main supremus ompeval)
+target_link_libraries(calculon_test calculon gtest gmock gtest_main)
 
 gtest_discover_tests(calculon_test)
