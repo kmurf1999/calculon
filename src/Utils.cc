@@ -23,15 +23,35 @@ void init_choose_table(void) {
   }
 }
 
-int choose(int n, int k) {
-  return CHOOSE_TABLE[n * MAX_CHOOSE + k];
-}
+int choose(int n, int k) { return CHOOSE_TABLE[n * MAX_CHOOSE + k]; }
 
 size_t get_hole_index(int c1, int c2) {
   size_t index = 0;
   index += choose(c1, 1);
   index += choose(c2, 2);
   return index;
+}
+
+torch::Tensor get_possible_hand_indexes(torch::Tensor board) {
+  auto out = torch::zeros(1326, torch::kBool);
+  if (board.size(0) == 0) {
+    out.fill_(1);
+    return out;
+  }
+  uint64_t board_mask = 0;
+  for (int i = 0; i < board.size(0); i++) {
+    board_mask |= 1ull << board[i].item<int>();
+  }
+  for (int c1 = 0; c1 < 52; c1++) {
+    if (board_mask & (1ull << c1))
+      continue;
+    for (int c2 = c1 + 1; c2 < 52; c2++) {
+      if (board_mask & (1ull << c2))
+        continue;
+      out[get_hole_index(c1, c2)] = 1;
+    }
+  }
+  return out;
 }
 
 vector<uint64_t> get_next_boards(uint64_t board) {

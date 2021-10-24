@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <vector>
 #include <assert.h>
+#include <torch/torch.h>
 
 using namespace std;
 
@@ -14,6 +15,8 @@ using namespace std;
 namespace utils {
 
 vector<uint64_t> get_next_boards(uint64_t board);
+
+torch::Tensor get_possible_hand_indexes(torch::Tensor board);
 
 extern int CHOOSE_TABLE[];
 

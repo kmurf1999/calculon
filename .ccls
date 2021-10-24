@@ -1,9 +1,12 @@
--std=c++11
--I
-./include
--I
-./libs/googletest/googletest/include
--I
-./libs/ompeval/include
--I
-/usr/local/cuda/include
+cmake
+%h -x c++-header
+-Wall
+-Wextra
+%cpp -std=c++11
+%c -std=c11
+-I/home/jdhao/local/include/opencv4
+-I./extern/libtorch/include
+-I./extern/googletest/googletest/include
+-I./extern/googletest/googlemock/include
+-I/usr/local/cuda/include
+-I.

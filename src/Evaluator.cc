@@ -9,20 +9,22 @@ void init_hand_ranks(void) {
   fclose(fin);
 }
 
-int *batch_eval(uint8_t board[5]) {
-  int *hand_values = new int[1326];
-  std::fill(hand_values, hand_values + 1326, 0);
+torch::Tensor batch_eval(torch::Tensor board) {
+
+  assert(board.size(0) == 5);
+
+  torch::Tensor hand_values = torch::zeros(1326);
   // create board mask
   uint64_t board_mask = 0;
   for (int i = 0; i < 5; i++) {
-    board_mask |= 1ull << board[i];
+    board_mask |= 1ull << board[i].item<int>();
   }
   // get board value
-  int p = HR[54 + board[0]];
-  p = HR[p + board[1] + 1];
-  p = HR[p + board[2] + 1];
-  p = HR[p + board[3] + 1];
-  p = HR[p + board[4] + 1];
+  int p = HR[54 + board[0].item<int>()];
+  p = HR[p + board[1].item<int>() + 1];
+  p = HR[p + board[2].item<int>() + 1];
+  p = HR[p + board[3].item<int>() + 1];
+  p = HR[p + board[4].item<int>() + 1];
   // iterate over hole cards
   for (uint64_t c1 = 0; c1 < constants::CARD_COUNT; ++c1) {
     if ((1ull << c1) & board_mask)
